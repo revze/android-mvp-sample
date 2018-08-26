@@ -31,7 +31,8 @@ public class Service {
         animeResponseCall.enqueue(new Callback<AnimeResponse>() {
             @Override
             public void onResponse(Call<AnimeResponse> call, Response<AnimeResponse> response) {
-                animeCharactersCallback.onSuccess(response.body().getAnimeCharacters());
+                if (response.isSuccessful()) animeCharactersCallback.onSuccess(response.body().getAnimeCharacters());
+                else animeCharactersCallback.onError(context.getString(R.string.server_error));
             }
 
             @Override
