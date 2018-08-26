@@ -1,2 +1,2 @@
 # android-mvp-sample
-Sample Android Project based on MVP architecture + Retrofit
+Sample Android project based on MVP architecture + Retrofit
